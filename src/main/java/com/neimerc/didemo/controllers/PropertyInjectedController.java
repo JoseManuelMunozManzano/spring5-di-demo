@@ -1,10 +1,13 @@
 package com.neimerc.didemo.controllers;
 
 import com.neimerc.didemo.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class PropertyInjectedController {
 
-    // now, go to test.controllers to see a manual property injection
+    @Autowired
     public GreetingService greetingService;
 
     public String getGreeting() {

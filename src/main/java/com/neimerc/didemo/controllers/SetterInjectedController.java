@@ -1,12 +1,15 @@
 package com.neimerc.didemo.controllers;
 
 import com.neimerc.didemo.services.GreetingService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
+@Controller
 public class SetterInjectedController {
 
     private GreetingService greetingService;
 
-    // now, go to test.controllers to see a manual setter injection
+    @Autowired
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }
