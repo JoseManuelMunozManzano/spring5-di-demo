@@ -9,11 +9,13 @@ import org.springframework.context.ApplicationContext;
 public class DiDemoApplication {
 
 	public static void main(String[] args) {
-		ApplicationContext ctx = SpringApplication.run(DiDemoApplication.class, args);
+		ApplicationContext ctx =  SpringApplication.run(DiDemoApplication.class, args);
 
-		MyController controller = (MyController) ctx.getBean("myController");
+		MyController myController = ctx.getBean("myController", MyController.class);
 
-		controller.hello();
+		String greeting = myController.hello();
+
+		System.out.println(greeting);
 	}
 
 }
