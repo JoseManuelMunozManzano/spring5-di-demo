@@ -1,9 +1,6 @@
 package com.neimerc.didemo;
 
-import com.neimerc.didemo.controllers.ConstructorInjectedController;
-import com.neimerc.didemo.controllers.MyController;
-import com.neimerc.didemo.controllers.PropertyInjectedController;
-import com.neimerc.didemo.controllers.SetterInjectedController;
+import com.neimerc.didemo.controllers.*;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -13,6 +10,9 @@ public class DiDemoApplication {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx =  SpringApplication.run(DiDemoApplication.class, args);
+
+		I18nController i18nController = ctx.getBean("i18nController", I18nController.class);
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("---------- Primary Bean");
 		MyController myController = ctx.getBean("myController", MyController.class);
