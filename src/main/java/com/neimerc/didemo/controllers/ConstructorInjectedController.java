@@ -1,6 +1,7 @@
 package com.neimerc.didemo.controllers;
 
 import com.neimerc.didemo.services.GreetingService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -10,7 +11,7 @@ public class ConstructorInjectedController {
 
     // anotación opcional cuando es por constructor
     // @Autowired
-    public ConstructorInjectedController(GreetingService greetingService) {
+    public ConstructorInjectedController(@Qualifier("constructorGreetingService") GreetingService greetingService) {
         this.greetingService = greetingService;
     }
 

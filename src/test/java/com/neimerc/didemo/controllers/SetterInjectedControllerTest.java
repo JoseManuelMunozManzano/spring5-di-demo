@@ -1,10 +1,8 @@
 package com.neimerc.didemo.controllers;
 
-import com.neimerc.didemo.services.GreetingServiceImpl;
+import com.neimerc.didemo.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class SetterInjectedControllerTest {
 
@@ -15,7 +13,7 @@ class SetterInjectedControllerTest {
         controller = new SetterInjectedController();
 
         // using the setter to inject that service implementation
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test

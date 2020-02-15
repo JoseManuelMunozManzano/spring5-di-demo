@@ -1,10 +1,8 @@
 package com.neimerc.didemo.controllers;
 
-import com.neimerc.didemo.services.GreetingServiceImpl;
+import com.neimerc.didemo.services.ConstructorGreetingService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class PropertyInjectedControllerTest {
 
@@ -15,7 +13,7 @@ class PropertyInjectedControllerTest {
         controller = new PropertyInjectedController();
 
         // manual property injection - least preferred method
-        controller.greetingService = new GreetingServiceImpl();
+        controller.greetingService = new ConstructorGreetingService();
     }
 
     @Test

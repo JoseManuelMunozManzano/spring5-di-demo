@@ -2,6 +2,7 @@ package com.neimerc.didemo.controllers;
 
 import com.neimerc.didemo.services.GreetingService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 @Controller
@@ -10,6 +11,7 @@ public class SetterInjectedController {
     private GreetingService greetingService;
 
     @Autowired
+    @Qualifier("setterInjectionGreetingService")
     public void setGreetingService(GreetingService greetingService) {
         this.greetingService = greetingService;
     }

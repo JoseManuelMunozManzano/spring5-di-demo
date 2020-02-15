@@ -30,5 +30,4 @@ public class DiDemoApplication {
 		ConstructorInjectedController constructorInjectedController = ctx.getBean("constructorInjectedController", ConstructorInjectedController.class);
 		System.out.println(constructorInjectedController.getGreeting());
 	}
-
 }
