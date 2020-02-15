@@ -1,13 +1,21 @@
 package com.neimerc.didemo.controllers;
 
+import com.neimerc.didemo.services.GreetingService;
 import org.springframework.stereotype.Controller;
 
 @Controller
 public class MyController {
 
-    public String hello() {
-        System.out.println("Hello World!");
+    private final GreetingService greetingService;
 
-        return "Hi Folks!";
+    // no need for @Autowired
+    // no @Qualifier, so it takes primary bean
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
+
+    public String sayHello() {
+        return greetingService.sayGreeting();
     }
 }
